@@ -3,7 +3,7 @@ package CeilNumber;
 public class CeilNumber {
     public static void main(String[] args) {
         int[] sample1={3,5,7,9,11,13,15,19,21,24,28,29,34};
-        int index=ceilNumber(sample1,40);
+        int index=ceilNumber(sample1,8);
         System.out.println(index);
 
         int[] sample2={19,17,15,12,7,6,4,2,1};
