@@ -7,6 +7,7 @@ public class RichestWealth {
         int[][] accounts = {{1,5},{7,3}, {3,5}};
         int highestBalance= maximumWealth(accounts);
         System.out.println(highestBalance); //returns 10
+        System.out.println(Integer.MIN_VALUE);
     }
 
     static int maximumWealth(int[][] accounts){
