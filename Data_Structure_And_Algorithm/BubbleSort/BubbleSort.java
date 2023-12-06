@@ -3,12 +3,13 @@ package BubbleSort;
 import java.util.Arrays;
 
 public class BubbleSort {
+
     public static void main(String[] args) {
         int[] num = {3,6,2,4,9,1};
         bubble(num);
         System.out.println(Arrays.toString(num));
     }
-
+    //IMPLEMENTING THE BUBBLE SORT ALGORITHM
     static  void bubble(int[] arr){
         for(int x = 0; x<arr.length;x++){
             boolean swapped=false;
