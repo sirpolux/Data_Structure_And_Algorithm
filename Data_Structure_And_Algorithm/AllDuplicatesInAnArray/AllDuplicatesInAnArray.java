@@ -30,7 +30,7 @@ public class AllDuplicatesInAnArray {
         List<Integer> dup =  new ArrayList<>();
         for(int i=0; i<nums.length; i++){
             if(nums[i]!= i+1){
-                dup.add(i+1);
+                dup.add(nums[i]);
             }
         }
         return dup;
