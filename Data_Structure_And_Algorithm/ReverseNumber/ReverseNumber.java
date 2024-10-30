@@ -22,4 +22,9 @@ public class ReverseNumber {
         }
         return  base;
     }
+
+    static int getBase2(int number){
+        return(int)(Math.log10(number))+ 1;
+    }
+
 }
