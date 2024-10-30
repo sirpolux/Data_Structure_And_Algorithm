@@ -8,7 +8,6 @@ public class BinarySearch2 {
         System.out.println(index);
     }
 
-
     static int binarySearch(int[] arr, int target, int start, int end){
         if (start>end){
             return -1;
