@@ -11,8 +11,6 @@ public class SumOfDigits {
         if (digits<=1){
             return digits;
         }
-        int digit = digits%10;
-        int remDigits = digits/10;
-        return digit + sumOfDigits(remDigits);
+        return (digits%10) + sumOfDigits(digits/10);
     }
 }
