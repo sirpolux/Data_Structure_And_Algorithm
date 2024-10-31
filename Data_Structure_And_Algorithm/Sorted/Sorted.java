@@ -18,4 +18,10 @@ public class Sorted {
         return false;
 
     }
+    static  boolean sorted2(int[] numbers, int position, int len){
+        if (position>=len){
+            return  true;
+        }
+        return numbers[position] <= numbers[position+1] && sorted(numbers,++position,len);
+    }
 }
