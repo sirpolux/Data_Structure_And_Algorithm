@@ -5,4 +5,16 @@ public class EvenNumberOfDigits2 {
 
     }
 
+
+
+
+
+    private static boolean isEven(int len){
+        return len%2==0;
+    }
+
+    private static int getSize(String num){
+        return (int)(Math.log10(Integer.parseInt(num))+1);
+    }
+
 }
