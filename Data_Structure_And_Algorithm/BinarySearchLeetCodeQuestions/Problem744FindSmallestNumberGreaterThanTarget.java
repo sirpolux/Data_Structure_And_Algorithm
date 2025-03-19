@@ -19,7 +19,6 @@ public class Problem744FindSmallestNumberGreaterThanTarget {
                 start=mid+1;
             }
         }
-        System.out.println("Start: "+ start);
         return letters[start%(letters.length)];
 
     }
