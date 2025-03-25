@@ -1,4 +1,4 @@
-package FindPickItem;
+package FindPickItemMountainArray;
 
 public class FindPickItem {
     public static void main(String[] args) {
