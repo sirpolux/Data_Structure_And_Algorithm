@@ -10,6 +10,9 @@ public class Main2 {
         linkedList.insertFirst(32);
         linkedList.insertLast(9);
         linkedList.insertLast(30);
+        linkedList.insert(3,39);
+        linkedList.insert(3,42);
+
 
         linkedList.printDetails();
         System.out.println();
