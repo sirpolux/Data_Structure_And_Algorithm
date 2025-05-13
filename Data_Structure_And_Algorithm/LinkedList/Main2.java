@@ -16,7 +16,17 @@ public class Main2 {
 
         linkedList.printDetails();
         System.out.println();
-        System.out.println(linkedList.toString());
+        System.out.println(linkedList);
+
+        System.out.println(linkedList.deleteAt(3));;
+        System.out.println(linkedList.deleteAt(4));;
+
+//        System.out.println(linkedList.deleteFirst());
+//        System.out.println(linkedList.deleteFirst());
+
+        linkedList.printDetails();
+        System.out.println();
+        System.out.println(linkedList);
 
     }
 }

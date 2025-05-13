@@ -113,7 +113,7 @@ public class LL2 {
         }
 
         Node beforeLast = getNode(size-1);
-        int deleted = beforeLast.value;
+        int deleted = beforeLast.next.value;
         beforeLast.next=null;
         tail=beforeLast;
         size--;
