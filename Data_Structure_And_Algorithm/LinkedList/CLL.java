@@ -16,6 +16,38 @@ public class CLL {
     private Node head;
     private Node tail;
 
+    public void delete(int val){
+        Node node = head;
+        if (node==null){
+            return;
+        }
+        if (node.val==val){
+            head=null;
+            tail=null;
+            size--;
+        }
+        while (node.next!=head){
+            if(node.next.val==val){
+                if (node.next==tail){
+                    tail=node.next.next;
+                }
+                node.next=node.next.next;
+                size--;
+                return;
+            }
+            node=node.next;
+          //  if (node.ne)
+        }
+
+    }
+
+    public void printHeadAndTail(){
+        System.out.println("************************");
+        System.out.printf("Head: %s\nTail: %s\n",head.val, tail.val);
+        System.out.println("************************");
+
+    }
+
     public void info(){
         Node node = head;
 
@@ -44,6 +76,8 @@ public class CLL {
         size++;
 
     }
+
+
 
     private class Node{
         private int val;
