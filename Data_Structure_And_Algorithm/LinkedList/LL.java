@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.List;
+
 public class LL {
 
     private Node head;
@@ -14,6 +16,12 @@ public class LL {
             tail=head;
         }
         size+=1;
+    }
+
+
+    public void addItemsToList(List<Integer> vals){
+       vals.forEach(this::insertLast);
+       //vals.forEach(this::insertLast);
     }
 
     public void tailInfo(){
@@ -113,6 +121,29 @@ public class LL {
         return value;
     }
 
+    public void insertAt(int val, int index)
+    {
+       head=insertAtRec(val,index,head);
+    }
+
+    private Node insertAtRec(int val, int index, Node node){
+
+        if(index==0){
+            Node newEntry = new Node(val);
+            newEntry.next=node;
+            size++;
+            return newEntry;
+        }
+        if (node.next==null){
+            Node newEntry = new Node(val);
+            node.next=newEntry;
+            return node;
+            //throw new RuntimeException("Index exceeds size of linked list");
+        }
+        System.out.println(node.value);
+        node.next=insertAtRec(val,index-1,node.next);
+        return node;
+    }
     private class Node{
         int value;
         Node next;
@@ -134,4 +165,5 @@ public class LL {
                     '}';
         }
     }
+
 }
