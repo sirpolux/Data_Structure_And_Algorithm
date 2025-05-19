@@ -8,6 +8,8 @@ public class LL {
     private Node tail;
     private int size;
 
+
+
     public void insertFirst(int value){
         Node temp = new Node(value);
         temp.next=head;
@@ -41,6 +43,10 @@ public class LL {
         head=deleteDuplicate(head);
     }
 
+
+    public  void printFromHead(){
+        System.out.println(head);
+    }
 //    private Node deleteDuplicate(Node node){
 //        if (node.next==null){
 //            return node;
@@ -69,9 +75,11 @@ public class LL {
 
     }
 
+
     public int getSize(){
         return size;
     }
+
 
     public void viewData(){
         Node temp = head;
@@ -80,6 +88,100 @@ public class LL {
             temp=temp.next;
         }
         System.out.println("END");
+    }
+
+     public LL mergeList(LL l1, LL l2){
+        LL list = new LL();
+        Node head = mergeList2(l1.head,l2.head);
+         //System.out.println(head);
+        this.head=head;
+         System.out.println("Printing the head of the list");
+         //System.out.println(list.head);
+        return  list;
+    }
+
+    private Node mergeList(Node list1, Node list2){
+        if(list1==null){
+            return list2;
+        }
+        if(list2==null){
+            return list1;
+        }
+
+        Node head1 = null;
+        Node newNode = new Node() ;
+        Node f = list1;
+        Node l = list2;
+
+        while(f!=null && l!=null){
+
+            Node entry;
+            if(f.value<l.value){
+                entry = new  Node(f.value);
+                f=f.next;
+            }else{
+                entry = new Node(l.value);
+                l=l.next;
+            }
+            if(head1==null){
+                head1 = entry;
+                newNode=head1;
+            }else{
+                newNode.next=entry;
+                newNode=newNode.next;
+            }
+
+        }
+        while(f!=null){
+            Node entry = new Node(f.value);
+            newNode.next=entry;
+            newNode=newNode.next;
+            f=f.next;
+        }
+        while(l!=null){
+            Node entry = new Node(l.value);
+            newNode.next=entry;
+            newNode=newNode.next;
+            l=l.next;
+        }
+
+        return head1;
+    }
+
+    private Node mergeList2(Node n1, Node n2){
+        if (n1==null){
+            return n2;
+        }
+        if (n2==null){
+            return  n1;
+        }
+        Node newHead = new Node();
+        Node tail = newHead;
+
+        while (n1!=null && n2!=null){
+           // System.out.printf("List 1: %s\nList 2: %s", n1.value, n2.value);
+            if(n1.value<n2.value){
+                tail.next=n1;
+                n1=n1.next;
+                tail=tail.next;
+
+            }else {
+                tail.next=n2;
+                n2=n2.next;
+                tail=tail.next;
+
+            }
+            //print(newHead);
+            //print(tail);
+        }
+
+        tail.next=n1!=null?n1:n2;
+        //print(newHead.next);
+        return newHead.next;
+    }
+
+    private void print(Node node){
+        System.out.println(node);
     }
 
     private Node getNode(int index){
@@ -188,6 +290,10 @@ public class LL {
             this.next=node;
         }
 
+        public Node(){
+
+        }
+
         @Override
         public String toString() {
             return "Node{" +
@@ -195,6 +301,8 @@ public class LL {
                     ", next=" + next +
                     '}';
         }
+
+
     }
 
 }
