@@ -21,7 +21,6 @@ public class LL {
 
     public void addItemsToList(List<Integer> vals){
        vals.forEach(this::insertLast);
-       //vals.forEach(this::insertLast);
     }
 
     public void tailInfo(){
@@ -38,6 +37,38 @@ public class LL {
         size+=1;
 
     }
+    public void  deleteDuplicate(){
+        head=deleteDuplicate(head);
+    }
+
+//    private Node deleteDuplicate(Node node){
+//        if (node.next==null){
+//            return node;
+//        }
+//        if (node.next.value== node.value){
+//            node.next = node.next.next;
+//            return deleteDuplicate(node);
+//        }
+//        node.next=deleteDuplicate(node.next);
+//        return node;
+//    }
+
+    private Node deleteDuplicate(Node node){
+        if (node.next==null){
+            tail=node;
+            return node;
+        }
+        if(node.value == node.next.value){
+            node.next=node.next.next;
+            size--;
+            return deleteDuplicate(node);
+        }
+
+        node.next=deleteDuplicate(node.next);
+        return  node;
+
+    }
+
     public int getSize(){
         return size;
     }
