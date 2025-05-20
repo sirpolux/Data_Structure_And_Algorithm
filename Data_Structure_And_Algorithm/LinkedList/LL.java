@@ -1,5 +1,6 @@
 package LinkedList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LL {
@@ -82,6 +83,15 @@ public class LL {
 
 
     public void viewData(){
+        Node temp = head;
+        while (temp!=null){
+            System.out.print(temp.value+ "->");
+            temp=temp.next;
+        }
+        System.out.println("END");
+    }
+
+    public void viewDataCircle(){
         Node temp = head;
         while (temp!=null){
             System.out.print(temp.value+ "->");
@@ -303,6 +313,75 @@ public class LL {
         }
 
 
+    }
+
+    public  boolean checkIfListContainCycle(){
+        Node head = this.head;
+        Node fastPointer = head;
+        Node slowPointer = head;
+        boolean notFirstRun = false;
+        while (fastPointer!=null && fastPointer.next!=null){
+            if (notFirstRun){
+                if (slowPointer==fastPointer){
+                    return true;
+                }
+            }else {
+                notFirstRun=true;
+            }
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+        return false;
+    }
+
+    public void createListWithCycle(ArrayList<Integer> items, int circlePointer){
+        addItemsToList(items);
+        if (circlePointer<this.size){
+            Node last = this.tail;
+            Node cyclePoints = getNode(circlePointer);
+            last.next=cyclePoints;
+            System.out.println("Circle points to : "+circlePointer);
+        }
+
+    }
+
+    public void convertToCycle(int position){
+        if(position<this.size){
+            Node cyclePointer = getNode(position);
+            Node last = this.tail;
+            last.next = cyclePointer;
+        }
+    }
+
+
+    public Res getCirclePosition(){
+        Res  response = null;
+        Node head = this.head;
+        Node fastPointer = head;
+        Node slowPointer = head;
+        int position = -1;
+        boolean notFirstRun = false;
+        while (fastPointer!=null && fastPointer.next!=null){
+            if (notFirstRun){
+                if (slowPointer==fastPointer){
+                    Node pointer2 = head;
+                    while (pointer2!=slowPointer){
+
+                    }
+                }
+            }else {
+                notFirstRun=true;
+            }
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+        return response;
+
+    }
+
+    public   class Res{
+        private Node node;
+        private int position;
     }
 
 }
