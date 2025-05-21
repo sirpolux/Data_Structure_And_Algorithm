@@ -1,6 +1,6 @@
 package LeetCodeInterviewQuestions.LinkedList;
 
-import LinkedList.LL;
+import LeetCodeInterviewQuestions.LinkedList.LinkedList.LL;
 
 import java.util.ArrayList;
 import java.util.Arrays;

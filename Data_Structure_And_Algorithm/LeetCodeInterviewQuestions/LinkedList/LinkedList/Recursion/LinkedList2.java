@@ -1,4 +1,4 @@
-package LinkedList.Recursion;
+package LeetCodeInterviewQuestions.LinkedList.LinkedList.Recursion;
 
 public class LinkedList2 {
 

@@ -1,4 +1,4 @@
-package LinkedList;
+package LeetCodeInterviewQuestions.LinkedList.LinkedList;
 
 public class NodeDto {
     int size;

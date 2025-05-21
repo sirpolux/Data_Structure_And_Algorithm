@@ -1,4 +1,4 @@
-package LinkedList;
+package LeetCodeInterviewQuestions.LinkedList.LinkedList;
 
 import java.util.ArrayList;
 import java.util.List;
