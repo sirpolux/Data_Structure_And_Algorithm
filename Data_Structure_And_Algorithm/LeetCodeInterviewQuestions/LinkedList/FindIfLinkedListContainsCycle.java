@@ -15,6 +15,9 @@ public class FindIfLinkedListContainsCycle {
         list.addItemsToList(listItems);
         list.convertToCycle(7);
         return list.checkIfListContainCycle();
+
+
+
     }
 
     static public void isCycle(){

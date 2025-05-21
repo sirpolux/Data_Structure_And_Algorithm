@@ -355,18 +355,20 @@ public class LL {
 
 
     public Res getCirclePosition(){
-        Res  response = null;
+
         Node head = this.head;
         Node fastPointer = head;
         Node slowPointer = head;
-        int position = -1;
+        int len = 0;
         boolean notFirstRun = false;
         while (fastPointer!=null && fastPointer.next!=null){
             if (notFirstRun){
                 if (slowPointer==fastPointer){
-                    Node pointer2 = head;
+                    Node pointer2 = slowPointer.next;
+                    len ++;
                     while (pointer2!=slowPointer){
-
+                        pointer2=pointer2.next;
+                        len++;
                     }
                 }
             }else {
@@ -375,13 +377,50 @@ public class LL {
             slowPointer = slowPointer.next;
             fastPointer = fastPointer.next.next;
         }
-        return response;
-
+        Node circleStartNode = getStartNode(len);
+        return new Res(len,circleStartNode);
     }
 
-    public   class Res{
+    private Node getStartNode(int len){
+        Node startPoint = this.head;
+        Node pointer1 = startPoint;
+        Node pointer2 = startPoint;
+        while (len>0){
+            pointer1=pointer1.next;
+            len--;
+        }
+        while (pointer2!=pointer1){
+            pointer1=pointer1.next;
+            pointer2=pointer2.next;
+        }
+
+        return pointer1;
+    }
+
+    private class Res{
         private Node node;
         private int position;
+
+        public Res(int position, Node node){
+            this.node= node;
+            this.position = position;
+        }
+
+        public Node getNode() {
+            return node;
+        }
+
+        public void setNode(Node node) {
+            this.node = node;
+        }
+
+        public int getPosition() {
+            return position;
+        }
+
+        public void setPosition(int position) {
+            this.position = position;
+        }
     }
 
 }
